@@ -9,6 +9,7 @@ public:
       int n = nums.size(), i = 0;
       while (i < n)
       {
+         // since all elements are in range [1,n], pigeon hole principle can be applied. we put all the elements in its estimated correct and position and the only element that will not fit in location will be the duplicate one.
          int correct = nums[i] - 1;
          if (nums[i] == nums[correct])
             i++;
