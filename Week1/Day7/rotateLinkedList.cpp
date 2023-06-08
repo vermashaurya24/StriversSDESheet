@@ -26,6 +26,7 @@ public:
       int length = len(head);
       if (!length)
          return head;
+      // performing rotations > length makes no sense as after every length rotations, linkedlist is back to original
       k = k % length;
       if (!head || !k)
          return head;
