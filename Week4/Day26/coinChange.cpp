@@ -29,6 +29,25 @@ public:
       int res = solve(coins, amount, coins.size() - 1);
       return res >= 1e9 ? -1 : res;
    }
+   // 2 array memoized
+   // int coinChange(vector<int>& coins, int amount) {
+   //      int n = coins.size();
+   //      vector<int> prev(amount+1), cur(amount+1);
+   //      for(int j=0; j<amount+1; j++)   prev[j] = 1e9;
+   //      for(int i=1; i<n+1; i++) {
+   //          for(int j=1; j<amount+1; j++) {
+   //              if(coins[i-1] <= j) {
+   //                  int pick = cur[j-coins[i-1]]+1, notpick = prev[j];
+   //                  cur[j] = min(pick,notpick);
+   //              }
+   //              else {
+   //                  cur[j] = prev[j];
+   //              }
+   //          }
+   //          prev = cur;
+   //      }
+   //      return prev[amount] >= 1e9 ? -1 : prev[amount];
+   //  }
 };
 
 void main()
