@@ -3,7 +3,6 @@ using namespace std;
 
 struct Node
 {
-   // bool flag = false;
    int count = 0;
    int ends = 0;
    Node *links[26];
