@@ -6,33 +6,35 @@ class Solution
 public:
    string reverseWords(string s)
    {
-      while (s.back() == ' ')
-         s.pop_back();
       reverse(s.begin(), s.end());
-      while (s.back() == ' ')
-         s.pop_back();
-      // reverse(s.begin(), s.end());
-      int n = s.size();
-      string word = "";
-      for (int i = 0; i < n; i++)
+      string res = "", word = "";
+      for (auto &ch : s)
       {
-         if (s[i] == ' ')
+         if (ch == ' ')
          {
-            if (word == "")
+            if (word.empty())
                continue;
-            reverse(word.begin(), word.end());
-            s += word;
-            s += ' ';
-            word = "";
+            else
+            {
+               reverse(word.begin(), word.end());
+               res += word;
+               res += ' ';
+               word = "";
+            }
          }
          else
          {
-            word += s[i];
+            word += ch;
          }
       }
-      reverse(word.begin(), word.end());
-      s += word;
-      return s.substr(n);
+      if (!word.empty())
+      {
+         reverse(word.begin(), word.end());
+         res += word;
+      }
+      if (res.back() == ' ')
+         res.pop_back();
+      return res;
    }
 };
 
