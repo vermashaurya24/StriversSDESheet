@@ -4,7 +4,6 @@ using namespace std;
 class Solution
 {
 public:
-public:
    vector<string> res;
 
    void solve(string s, int index, string &cur)
